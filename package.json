@@ -1,0 +1,19 @@
+{
+  "name": "side_project",
+  "version": "1.0.0",
+  "description": "A side project, hopefully it doesnt fall through >.<",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jcook894/Game.git"
+  },
+  "author": "Julian Cook",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jcook894/Game/issues"
+  },
+  "homepage": "https://github.com/Jcook894/Game#readme"
+}
