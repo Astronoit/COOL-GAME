@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Jcook894/Game/issues"
   },
-  "homepage": "https://github.com/Jcook894/Game#readme"
+  "homepage": "https://github.com/Jcook894/Game#readme",
+  "dependencies": {
+    "@types/babel-core": "^6.25.2",
+    "typescript-compiler": "^1.4.1-2"
+  }
 }
