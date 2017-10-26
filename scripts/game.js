@@ -23,8 +23,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const cylinder = new BABYLON.Mesh.CreateCylinder("cylinder", 3, 3, 3, 6, 1, scene);
 
+
     //Creation of Polygon.
-    //const polygon = new BABYLON.Mesh.CreatePolygon(); 
+    //const polygon = new BABYLON.Mesh.CreatePolygon();
 
     // Positions of Geometry.
     sphere.position.y = 6;
@@ -34,10 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
     torus.positionx = -8;
 
     cube.position.y = 10;
-    cube.position.x = -11;
-
-    polygon.position.y = 14;
-    polygon.position.x = -12;
+    cube.position.x = -11; 
 
     plane.position.x = 15;
     plane.position.y = -2;
@@ -50,6 +48,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const ground = new BABYLON.Mesh.CreateGround("ground1", 6, 6, 2, scene);
 
+    scene.debugLayer.show();
     return scene;
   }
 
