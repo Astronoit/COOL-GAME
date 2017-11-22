@@ -34,11 +34,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const myPlane = new BABYLON.MeshBuilder.CreatePlane("myPlane", {width: 5, height: 100}, scene);
 
-    const myGround = new BABYLON.MeshBuilder.CreateGround("myGround", {width: 100, height: 100, subdivsions: 4}, scene);
+    //const myGround = new BABYLON.MeshBuilder.CreateGround("myGround", {width: 100, height: 100, subdivsions: 4}, scene);
 
+    const myPoints = [
+      new BABYLON.Vector3(0,0,0),
+      new BABYLON.Vector3(0,1,1),
+      new BABYLON.Vector3(0,1,0)
+
+    
+    ];
+
+    const myLine = new BABYLON.MeshBuilder.CreateLines("myLine", {points: myPoints}, scene);
     // Positions of Geometry.
     sphere.position.y = 6;
     sphere.position.x = -8;
+
 
     torus.position.y = 9;
     torus.positionx = -8;
@@ -46,6 +56,8 @@ window.addEventListener("DOMContentLoaded", () => {
     cube.position.y = 10;
     cube.position.x = -11;
 
+    myLine.position.y = 25;
+    myLine.position.x = 25;
 
     mySphere.position.y = -40;
     mySphere.position.x = 10;
