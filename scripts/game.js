@@ -27,9 +27,10 @@ window.addEventListener("DOMContentLoaded", () => {
     const knot = new BABYLON.Mesh.CreateTorusKnot("knot", 2, 0.5, 128, 64, 2, 3, scene, false, BABYLON.Mesh.DEFAULTSIDE);
     const cylinder = new BABYLON.Mesh.CreateCylinder("cylinder", 3, 3, 3, 6, 1, scene);
 
-    //Created cube using mesh builder.
-    const myBox = new BABYLON.MeshBuilder.CreateBox('box', {height: 5, width: 6, depth: 1.0}, scene);
+    //Creating polygons using mesh builder.
+    const myBox = new BABYLON.MeshBuilder.CreateBox('box', {height: 5, width: 6, depth: 1.0,}, scene);
 
+    const mySphere = new BABYLON.MeshBuilder.CreateSphere('mySphere', {diameter: 20, diameterX: 3}, scene);
 
 
     // Positions of Geometry.
@@ -42,6 +43,10 @@ window.addEventListener("DOMContentLoaded", () => {
     cube.position.y = 10;
     cube.position.x = -11;
 
+
+    mySphere.position.y = -40;
+    mySphere.position.x = 10;
+    
     myBox.position.x = 50;
     myBox.position.y = -6;
 
