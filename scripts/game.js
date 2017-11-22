@@ -1,10 +1,15 @@
+'use strict';
+
+//When dom is done loading, render screne on canvas.
 window.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("renderCanvas");
   const engine = new BABYLON.Engine(canvas, true);
 
+  // This function creates the scene.
   const createScene = () => {
     const scene = new BABYLON.Scene(engine);
 
+    // Sets up Camera
     const camera = new BABYLON.FreeCamera('FreeCamera', new BABYLON.Vector3(0, 5, -10), scene);
 
     camera.setTarget(BABYLON.Vector3.Zero());
@@ -20,12 +25,12 @@ window.addEventListener("DOMContentLoaded", () => {
     const disc = new BABYLON.Mesh.CreateDisc("disc", 5, 30, scene, false, BABYLON.Mesh.DEFAULTSIDE);
     const torus = new BABYLON.Mesh.CreateTorus("torus", 5, 1, 10, scene);
     const knot = new BABYLON.Mesh.CreateTorusKnot("knot", 2, 0.5, 128, 64, 2, 3, scene, false, BABYLON.Mesh.DEFAULTSIDE);
-
     const cylinder = new BABYLON.Mesh.CreateCylinder("cylinder", 3, 3, 3, 6, 1, scene);
 
+    //Created cube using mesh builder.
+    const myBox = new BABYLON.MeshBuilder.CreateBox('box', {height: 5, width: 6, depth: 1.0}, scene);
 
-    //Creation of Polygon.
-    //const polygon = new BABYLON.Mesh.CreatePolygon();
+
 
     // Positions of Geometry.
     sphere.position.y = 6;
@@ -35,7 +40,10 @@ window.addEventListener("DOMContentLoaded", () => {
     torus.positionx = -8;
 
     cube.position.y = 10;
-    cube.position.x = -11; 
+    cube.position.x = -11;
+
+    myBox.position.x = 50;
+    myBox.position.y = -6;
 
     plane.position.x = 15;
     plane.position.y = -2;
@@ -51,7 +59,6 @@ window.addEventListener("DOMContentLoaded", () => {
     scene.debugLayer.show();
     return scene;
   }
-
 
   //Initializes Scene
   const scene = createScene();
