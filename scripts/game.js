@@ -30,7 +30,9 @@ window.addEventListener("DOMContentLoaded", () => {
     //Creating polygons using mesh builder.
     const myBox = new BABYLON.MeshBuilder.CreateBox('box', {height: 5, width: 6, depth: 1.0,}, scene);
 
-    const mySphere = new BABYLON.MeshBuilder.CreateSphere('mySphere', {diameter: 20, diameterX: 3}, scene);
+    const mySphere = new BABYLON.MeshBuilder.CreateSphere('mySphere', {diameter: 4, diameterX: 3}, scene);
+
+    const myPlane = new BABYLON.MeshBuilder.CreatePlane("myPlane", {width: 5, height: 100}, scene);
 
 
     // Positions of Geometry.
@@ -46,9 +48,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     mySphere.position.y = -40;
     mySphere.position.x = 10;
-    
+
     myBox.position.x = 50;
     myBox.position.y = -6;
+
+    myPlane.position.x = 60;
+    myPlane.position.y = -50;
 
     plane.position.x = 15;
     plane.position.y = -2;
