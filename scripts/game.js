@@ -34,6 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const myPlane = new BABYLON.MeshBuilder.CreatePlane("myPlane", {width: 5, height: 100}, scene);
 
+    const myGround = new BABYLON.MeshBuilder.CreateGround("myGround", {width: 100, height: 100, subdivsions: 4}, scene);
 
     // Positions of Geometry.
     sphere.position.y = 6;
