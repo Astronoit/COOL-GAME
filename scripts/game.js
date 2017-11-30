@@ -36,16 +36,34 @@ window.addEventListener("DOMContentLoaded", () => {
 
     //const myGround = new BABYLON.MeshBuilder.CreateGround("myGround", {width: 100, height: 100, subdivsions: 4}, scene);
 
+    //Created Line by using different vectors to connect the points.
     const myPoints = [
       new BABYLON.Vector3(0,0,0),
       new BABYLON.Vector3(0,1,1),
       new BABYLON.Vector3(0,1,0)
 
-    
     ];
 
     const myLine = new BABYLON.MeshBuilder.CreateLines("myLine", {points: myPoints}, scene);
+
+    // Position of pilot and the rotation configuration.
+
+    const pilot = new BABYLON.Mesh.CreateCylinder("cylinder", 3, 3, 3, 6, 1, scene);
+
+
+    const alpha = 10;
+    const beta = 11;
+    const gamma = 12;
+
+
     // Positions of Geometry.
+
+    pilot.position = new BABYLON.Vector3(6,6,10);
+    pilot.rotation = new BABYLON.Vector3(alpha, beta, gamma);
+
+
+
+
     sphere.position.y = 6;
     sphere.position.x = -8;
 
