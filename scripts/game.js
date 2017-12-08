@@ -108,15 +108,18 @@ window.addEventListener("DOMContentLoaded", () => {
     //Setting ambient lighting for the scene.
     scene.ambientColor = new BABYLON.Color3(2, 1, 1);
 
-    const myMaterial = new BABYLON.StandardMaterial("myMaterial", scene);
+    const metalTexture = new BABYLON.StandardMaterial("metalTexture", scene);
+    metalTexture.ambientTexture = new BABYLON.Texture("styles/textures/metal.jpeg", scene);
 
-    // myMaterial.diffuseColor = new BABYLON.Color3(1, 0, 1);
-    // myMaterial.specularColor = new BABYLON.Color3(0.5, 0.6, 0.87);
-    // myMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
-    myMaterial.alpha = 0.5;
-    myMaterial.ambientColor = new BABYLON.Color3(0, 7.98, 0);
+    // metalTexture.diffuseColor = new BABYLON.Color3(1, 0, 1);
+    // metalTexture.specularColor = new BABYLON.Color3(0.5, 0.6, 0.87);
+    // metalTexture.emissiveColor = new BABYLON.Color3(9, 7, 5);
 
-    knot.material = myMaterial;
+    //makes mesh transparent.
+    // myMaterial.alpha = 0.5;
+    metalTexture.ambientColor = new BABYLON.Color3(9, 9, 0);
+
+    cube.material = metalTexture;
 
     return scene;
   }
