@@ -28,45 +28,51 @@ window.addEventListener("DOMContentLoaded", () => {
     const cylinder = new BABYLON.Mesh.CreateCylinder("cylinder", 3, 3, 3, 6, 1, scene);
 
     //Creating polygons using mesh builder.
-    const myBox = new BABYLON.MeshBuilder.CreateBox('box', {height: 5, width: 6, depth: 1.0,}, scene);
+    const myBox = new BABYLON.MeshBuilder.CreateBox('box', {
+      height: 5,
+      width: 6,
+      depth: 1.0
+    }, scene);
 
-    const mySphere = new BABYLON.MeshBuilder.CreateSphere('mySphere', {diameter: 4, diameterX: 3}, scene);
+    const mySphere = new BABYLON.MeshBuilder.CreateSphere('mySphere', {
+      diameter: 4,
+      diameterX: 3
+    }, scene);
 
-    const myPlane = new BABYLON.MeshBuilder.CreatePlane("myPlane", {width: 5, height: 100}, scene);
+    const myPlane = new BABYLON.MeshBuilder.CreatePlane("myPlane", {
+      width: 5,
+      height: 100
+    }, scene);
 
     //const myGround = new BABYLON.MeshBuilder.CreateGround("myGround", {width: 100, height: 100, subdivsions: 4}, scene);
 
     //Created Line by using different vectors to connect the points.
     const myPoints = [
-      new BABYLON.Vector3(0,0,0),
-      new BABYLON.Vector3(0,1,1),
-      new BABYLON.Vector3(0,1,0)
+      new BABYLON.Vector3(0, 0, 0),
+      new BABYLON.Vector3(0, 1, 1),
+      new BABYLON.Vector3(0, 1, 0)
 
     ];
 
-    const myLine = new BABYLON.MeshBuilder.CreateLines("myLine", {points: myPoints}, scene);
+    const myLine = new BABYLON.MeshBuilder.CreateLines("myLine", {
+      points: myPoints
+    }, scene);
 
     // Position of pilot and the rotation configuration.
 
     const pilot = new BABYLON.Mesh.CreateCylinder("cylinder", 3, 3, 3, 6, 1, scene);
 
-
     const alpha = 10;
     const beta = 11;
     const gamma = 12;
 
-
     // Positions of Geometry.
 
-    pilot.position = new BABYLON.Vector3(6,6,10);
+    pilot.position = new BABYLON.Vector3(6, 6, 10);
     pilot.rotation = new BABYLON.Vector3(alpha, beta, gamma);
-
-
-
 
     sphere.position.y = 6;
     sphere.position.x = -8;
-
 
     torus.position.y = 9;
     torus.positionx = -8;
@@ -98,6 +104,19 @@ window.addEventListener("DOMContentLoaded", () => {
     const ground = new BABYLON.Mesh.CreateGround("ground1", 6, 6, 2, scene);
 
     scene.debugLayer.show();
+
+    //Setting ambient lighting for the scene.
+    scene.ambientColor = new BABYLON.Color3(2, 1, 1);
+
+    const myMaterial = new BABYLON.StandardMaterial("myMaterial", scene);
+
+    // myMaterial.diffuseColor = new BABYLON.Color3(1, 0, 1);
+    // myMaterial.specularColor = new BABYLON.Color3(0.5, 0.6, 0.87);
+    // myMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
+    myMaterial.ambientColor = new BABYLON.Color3(0, 7.98, 0);
+
+    knot.material = myMaterial;
+
     return scene;
   }
 
