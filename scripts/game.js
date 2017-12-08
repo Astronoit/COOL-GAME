@@ -113,6 +113,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // myMaterial.diffuseColor = new BABYLON.Color3(1, 0, 1);
     // myMaterial.specularColor = new BABYLON.Color3(0.5, 0.6, 0.87);
     // myMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
+    myMaterial.alpha = 0.5;
     myMaterial.ambientColor = new BABYLON.Color3(0, 7.98, 0);
 
     knot.material = myMaterial;
