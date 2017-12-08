@@ -115,6 +115,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const brickTexture = new BABYLON.StandardMaterial("brickTexture", scene);
     brickTexture.ambientTexture = new BABYLON.Texture("styles/textures/bricks.jpg", scene);
 
+    const floorTexture = new BABYLON.StandardMaterial("floorTexture", scene);
+    floorTexture.ambientTexture = new BABYLON.Texture("styles/textures/cracked_ground.jpg", scene);
+
 
     // metalTexture.diffuseColor = new BABYLON.Color3(1, 0, 1);
     // metalTexture.specularColor = new BABYLON.Color3(0.5, 0.6, 0.87);
@@ -123,11 +126,13 @@ window.addEventListener("DOMContentLoaded", () => {
     //makes mesh transparent.
     // myMaterial.alpha = 0.5;
 
+    floorTexture.ambientColor = new BABYLON.Color3(9, 9, 0);
     brickTexture.ambientColor = new BABYLON.Color3(9, 9, 0);
     metalTexture.ambientColor = new BABYLON.Color3(9, 9, 0);
 
     sphere.material = brickTexture;
     cube.material = metalTexture;
+    ground.material = floorTexture;
 
 
 
