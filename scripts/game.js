@@ -108,8 +108,13 @@ window.addEventListener("DOMContentLoaded", () => {
     //Setting ambient lighting for the scene.
     scene.ambientColor = new BABYLON.Color3(2, 1, 1);
 
+    //Setting Texture for shapes.
     const metalTexture = new BABYLON.StandardMaterial("metalTexture", scene);
     metalTexture.ambientTexture = new BABYLON.Texture("styles/textures/metal.jpeg", scene);
+
+    const brickTexture = new BABYLON.StandardMaterial("brickTexture", scene);
+    brickTexture.ambientTexture = new BABYLON.Texture("styles/textures/bricks.jpg", scene);
+
 
     // metalTexture.diffuseColor = new BABYLON.Color3(1, 0, 1);
     // metalTexture.specularColor = new BABYLON.Color3(0.5, 0.6, 0.87);
@@ -117,9 +122,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     //makes mesh transparent.
     // myMaterial.alpha = 0.5;
+
+    brickTexture.ambientColor = new BABYLON.Color3(9, 9, 0);
     metalTexture.ambientColor = new BABYLON.Color3(9, 9, 0);
 
+    sphere.material = brickTexture;
     cube.material = metalTexture;
+
+
 
     return scene;
   }
