@@ -7,6 +7,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // This function creates the scene.
   const createScene = () => {
+
+    //Sets up a scene, which gets rendered by the canvas.
     const scene = new BABYLON.Scene(engine);
 
     // Sets up Camera
@@ -14,10 +16,27 @@ window.addEventListener("DOMContentLoaded", () => {
 
     camera.setTarget(BABYLON.Vector3.Zero());
 
-    camera.attachControl(canvas, false);
+    camera.attachControl(canvas, true);
 
-    const light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
 
+    //The diff lights you can use in babylon, and the light properties.
+    const light = new BABYLON.DirectionalLight("DirectionalLight", new BABYLON.Vector3(0, -1, 0), scene);
+
+    const light1 = new BABYLON.DirectionalLight("dirLight1", new BABYLON.Vector3(1,-2,4), scene);
+
+    //const light = new BABYLON.PointLight("pointLight", new BABYLON.Vector3(1, 10, 1), scene);
+
+    //const light = new BABYLON.DirectionalLight("DirectionalLight", new BABYLON.Vector3(0, -1, 0), scene);
+
+    //const light = new BABYLON.SpotLight("spotLight", new BABYLON.Vector3(0, 30, -10), new BABYLON.Vector3(0, -1, 0), Math.PI / 3, 2, scene);
+
+    // const light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(0, 1, 0), scene);
+
+
+    //Light properties/colors.
+    light.diffuse = new BABYLON.Color3(0,1,2);
+    light.specular = new BABYLON.Color3(0,1,2);
+    light1.diffuse = new BABYLON.Color3(1,2,6);
     //Creating Shapes to get familiar with babylon.
     const sphere = new BABYLON.Mesh.CreateSphere('sphere', 16, 2, scene);
     const cube = new BABYLON.Mesh.CreateBox("box", 3.0, scene, false, BABYLON.Mesh.DEFAULTSIDE);
@@ -108,7 +127,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //Setting ambient lighting for the scene.
     scene.ambientColor = new BABYLON.Color3(2, 1, 1);
 
-    //Setting Texture for shapes.
+    //Setting Texture for shapes by using pictures of texture.
     const metalTexture = new BABYLON.StandardMaterial("metalTexture", scene);
     metalTexture.ambientTexture = new BABYLON.Texture("styles/textures/metal.jpeg", scene);
 
