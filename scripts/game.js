@@ -120,7 +120,7 @@ window.addEventListener("DOMContentLoaded", () => {
     knot.position.x = 12;
     knot.position.y = -10;
 
-    const ground = new BABYLON.Mesh.CreateGround("ground1", 6, 6, 2, scene);
+    const ground = new BABYLON.Mesh.CreateGround("ground1", 200, 200, 200, scene);
 
     scene.debugLayer.show();
 
@@ -135,7 +135,7 @@ window.addEventListener("DOMContentLoaded", () => {
     brickTexture.ambientTexture = new BABYLON.Texture("styles/textures/bricks.jpg", scene);
 
     const floorTexture = new BABYLON.StandardMaterial("floorTexture", scene);
-    floorTexture.ambientTexture = new BABYLON.Texture("styles/textures/cracked_ground.jpg", scene);
+    floorTexture.ambientTexture = new BABYLON.Texture("styles/textures/Grass_Texture.jpg", scene);
 
 
     // metalTexture.diffuseColor = new BABYLON.Color3(1, 0, 1);
