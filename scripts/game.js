@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const scene = new BABYLON.Scene(engine);
 
     //Changes the scene background color and light.
-    scene.clearColor =  BABYLON.Color3.Black();
+    scene.clearColor =  BABYLON.Color3.Blue();
     scene.ambientColor = new BABYLON.Color3(2, 3, 5);
 
     // Sets up Camera
@@ -51,7 +51,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const building = new BABYLON.MeshBuilder.CreateBox("building",{
       height: 100,
       width: 50,
-      depth: 50
+      depth: 25
     }, scene);
 
     //Creating polygons using mesh builder.
@@ -128,10 +128,10 @@ window.addEventListener("DOMContentLoaded", () => {
     knot.position.x = 12;
     knot.position.y = -10;
 
-    building.position.x = 20;
-    building.position.y = -10;
+    building.position.x = 0;
+    building.position.y = 50;
 
-    const ground = new BABYLON.Mesh.CreateGround("ground1", 200, 200, 200, scene);
+    const ground = new BABYLON.Mesh.CreateGround("ground1", 600, 600, 600, scene);
 
     scene.debugLayer.show();
 
@@ -146,7 +146,11 @@ window.addEventListener("DOMContentLoaded", () => {
     brickTexture.ambientTexture = new BABYLON.Texture("styles/textures/bricks.jpg", scene);
 
     const floorTexture = new BABYLON.StandardMaterial("floorTexture", scene);
-    floorTexture.ambientTexture = new BABYLON.Texture("styles/textures/Grass_Texture.jpg", scene);
+    floorTexture.ambientTexture = new BABYLON.Texture("styles/textures/asphalt.jpg", scene);
+
+    const buildingTexture = new BABYLON.StandardMaterial("buildingTexture", scene)
+    buildingTexture.ambientTexture = new BABYLON.Texture("styles/textures/bricks.jpg", scene);
+
 
 
     // metalTexture.diffuseColor = new BABYLON.Color3(1, 0, 1);
@@ -160,6 +164,9 @@ window.addEventListener("DOMContentLoaded", () => {
     brickTexture.ambientColor = new BABYLON.Color3(9, 9, 0);
     metalTexture.ambientColor = new BABYLON.Color3(9, 9, 0);
 
+    buildingTexture.ambientColor = new BABYLON.Color3(9,9,0);
+
+    building.material = buildingTexture;
     sphere.material = brickTexture;
     cube.material = metalTexture;
     ground.material = floorTexture;
