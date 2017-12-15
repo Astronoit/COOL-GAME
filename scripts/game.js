@@ -50,8 +50,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const building = new BABYLON.MeshBuilder.CreateBox("building",{
       height: 100,
-      width: 50,
-      depth: 25
+      width: 100,
+      depth: 100
     }, scene);
 
     //Creating polygons using mesh builder.
@@ -129,7 +129,7 @@ window.addEventListener("DOMContentLoaded", () => {
     knot.position.y = -10;
 
     building.position.x = 0;
-    building.position.y = 50;
+    building.position.y = 0;
 
     const ground = new BABYLON.Mesh.CreateGround("ground1", 600, 600, 600, scene);
 
