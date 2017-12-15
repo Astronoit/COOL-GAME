@@ -24,7 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
     //The diff lights you can use in babylon, and the light properties.
-    const light = new BABYLON.DirectionalLight("DirectionalLight", new BABYLON.Vector3(0, 2, 7), scene);
+    // const light = new BABYLON.DirectionalLight("spotLight", new BABYLON.Vector3(0, 1, 1), scene);
 
     //const light = new BABYLON.PointLight("pointLight", new BABYLON.Vector3(1, 10, 1), scene);
 
@@ -32,7 +32,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     //const light = new BABYLON.SpotLight("spotLight", new BABYLON.Vector3(0, 30, -10), new BABYLON.Vector3(0, -1, 0), Math.PI / 3, 2, scene);
 
-    //const light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(0, 1, 0), scene);
+    const light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(0, 1, 0), scene);
 
 
     //Light properties/colors.
@@ -47,6 +47,12 @@ window.addEventListener("DOMContentLoaded", () => {
     const torus = new BABYLON.Mesh.CreateTorus("torus", 5, 1, 10, scene);
     const knot = new BABYLON.Mesh.CreateTorusKnot("knot", 2, 0.5, 128, 64, 2, 3, scene, false, BABYLON.Mesh.DEFAULTSIDE);
     const cylinder = new BABYLON.Mesh.CreateCylinder("cylinder", 3, 3, 3, 6, 1, scene);
+
+    const building = new BABYLON.MeshBuilder.CreateBox("building",{
+      height: 100,
+      width: 50,
+      depth: 50
+    }, scene);
 
     //Creating polygons using mesh builder.
     const myBox = new BABYLON.MeshBuilder.CreateBox('box', {
@@ -122,12 +128,15 @@ window.addEventListener("DOMContentLoaded", () => {
     knot.position.x = 12;
     knot.position.y = -10;
 
+    building.position.x = 20;
+    building.position.y = -10;
+
     const ground = new BABYLON.Mesh.CreateGround("ground1", 200, 200, 200, scene);
 
     scene.debugLayer.show();
 
     //Setting ambient lighting for the scene.
-    scene.ambientColor = new BABYLON.Color3(2, 1, 1);
+    scene.ambientColor = new BABYLON.Color3(1, 1, 1);
 
     //Setting Texture for shapes by using pictures of texture.
     const metalTexture = new BABYLON.StandardMaterial("metalTexture", scene);
